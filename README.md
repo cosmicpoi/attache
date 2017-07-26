@@ -1,4 +1,4 @@
-#Attache Theme for Pico
+# Attache Theme for Pico
 
 > attache: a flat, usually rigid, rectangular briefcase for carrying business papers, documents, or the like.
 
@@ -14,7 +14,7 @@ This theme falls very much in the second category. On the front page, there's a 
 
 This theme only has two types of pages: the homepage and a project page. The homepage collects the project pages, which are each individually accessible.
 
-##Features
+## Features
 
 **Dynamic Tag System**
 
@@ -56,11 +56,11 @@ There's an entirely populated dummy file with a sample `config.php` to get start
 
 ![preview 1](./previews/img2.jpg)
 
-##Configuration
+## Configuration
 
 Most of the important aspects of the theme are customizable. See the sample `config.php` file for more details.
 
-##Project Pages
+## Project Pages
 
 This theme only has two types of pages: the homepage and a project page. The homepage collects the project pages, which are each individually accessible.
 
