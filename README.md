@@ -105,3 +105,53 @@ Let's break down what each attribute does.
 - `Tags`: these are used for organization on the front page. Any tags which are not primary tags will automatically get added to the search box on the front page.
 - `Robots`: for `<meta>`
 - `Template`: specifies that the page should use `project.twig`. Only change if you want to make a certain page special.
+
+**Dynamic HTML Thumbnails***
+
+You can also make dynamic HTML thumbnails, as shown in `p14.md` of the demo. Enabling this for a project will cause the thumbnail on the project page to be rendered as a block of HTML rather than an image.
+
+![thumb gif](./previews/gif5.gif)
+
+To do this, simply:
+
+- Select a project you'd like to enable this for. Let's call it `myproject.md`.
+- In `myproject.md`, set `Image` to `none`.
+- Create a file called `myproject-content.md` and place all the HTML you want to be inserted in that file.
+
+For instance, this is the example shown on the dummy website:
+
+```
+~~~~~ p14.md ~~~~~~~~~~
+---
+Title: Big Project
+Description: Another long description. Blah.
+Date: 2017/04/10
+Image: none
+...
+---
+
+~~~~p14-content.md~~~~~
+
+<style type="text/css">
+    #mycontent {
+        padding:1em;
+    }
+    #contentcanvas {
+        border:1px solid black;
+        width:100%;
+    }
+</style>
+<p id="mycontent">You can also make dynamic HTML thumbnails.</p>
+<canvas id="contentcanvas" width="100" height="100"></canvas>
+
+<script>
+    var contentcanvas = document.getElementById("contentcanvas");
+    var cctx = contentcanvas.getContext('2d');
+    function drawContent() {
+        cctx.fillStyle="hsl("+((Date.now()*0.1)%360)+",50%, 50%)";
+        cctx.fillRect(0, 0, contentcanvas.width, contentcanvas.height);
+        window.requestAnimationFrame(drawContent);
+    }
+    window.requestAnimationFrame(drawContent);
+</script>
+```

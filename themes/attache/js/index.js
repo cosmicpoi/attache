@@ -35,6 +35,7 @@ $("#iconDownn").click(function() {
 $('div.toInsert').each(function() {
     var contentid = $(this).attr("data-whichparent");
     var str = contentid.substring(0, contentid.length-8);
+    console.log(str);
     $(this).insertAfter($('span.insertAnchor[data-isparent="'+str+'"]'));
 });
 //preprocessing steps
