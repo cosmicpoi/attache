@@ -193,6 +193,8 @@
     <script type="text/javascript" src="{{ theme_url }}/js/theme.js"></script>
      <script type="text/javascript" src="{{ theme_url }}/js/index.js"></script>
      <script>
+      //to avoid stretching, I would put in a onresize handler that forces the canvas to be the right size
+
       // put canvas code in here
       let canvas = document.getElementById("canvas");
       let ctx = canvas.getContext('2d');

@@ -60,23 +60,22 @@
 
     </header>
 
+     <!-- this part differs from index -->
+    <section id="post" class="notheader" style="display:none;">
+        <div id="postcontainer">
+            <h1>{{ meta.title }}<span class="subheader"> - Project Page</span></h1>
+            <ul id="metadata">
+                <li>{{ meta.date_formatted|date("Y") }} - </li>
+                <li>tags: {{ meta.tags }}</li>
+
+            </ul>
+            <div id="postcontent">
+                {{ content }}
+            </div>
+        </div>
+    </section>
+
     <!-- end differ -->
-
-    <footer id="footer" class="notheader" style="display:none;">
-        <div id="columns">
-            <div class="column col1">
-            <p>{{ config.mytheme_footer }}</p>
-                
-            </div>
-            <div class="column col2">
-                <img src="{{ theme_url }}/{{ config.mytheme_logourl }}" />
-                <p>To hire me, <br><span class="anchor contactshower">contact</span> for details!</p>
-            </div>
-        </div>
-
-        <div id="copyright">
-        <a href="">Attache Theme</a> for <a href="http://picocms.org/">Pico</a>. Copyright 2017 <a href="http://alanluo.com">Alan Luo</a>. All Rights Reserved.
-        </div>
 
     <footer id="footer" class="notheader" style="display:none;">
         <div id="columns">
