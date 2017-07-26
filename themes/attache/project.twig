@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}">
+    {% endif %}{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ theme_url }}/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/css/project.css" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ theme_url }}/js/masonry.pkgd.min.js"></script>
+</head>
+<body>
+    <div class="smallheader">
+        <div class="logo">
+            <img src="{{ theme_url }}/{{ config.attache_logourl }}" />
+        </div>
+        <h3 class="name">My Portfolio</h3>
+        <ul>
+            <li class="active"><span class="anchor">projects</span></li>
+
+            {% for link in config.attache_navlinks %}
+            <li><a href="{{ link[1] }}"><span class="anchor">{{ link[0] }}</span></a></li>
+            {% endfor %}
+
+            <li><span class="anchor contactshower">contact</span></li>
+            {%if config.attache_showlinks %}
+                <li><span class="anchor linkshower">links</span></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div id="bodyContainer">
+    <header id="header">
+        <div class="logo">
+            <img src="{{ theme_url }}/{{ config.attache_logourl }}" />
+        </div>
+
+        <p class="name" class="noselect"><a href="{{ base_url }}">My Portfolio</a><span id="subtitle" class="noselect"><span id="actualtitle"></span><span id="flicker">_</span></span></p>
+
+        <ul id="contact">
+            <li><span class="anchor active">projects</span></li>
+            {% for link in config.attache_navlinks %}
+                <li><a href="{{ link[1] }}"><span class="anchor">{{ link[0] }}</span></a></li>
+            {% endfor %}
+
+            <li><span class="anchor contactshower" id="contactlink">contact</span></li>
+            {%if config.attache_showlinks %}
+                <li><span class="anchor linkshower" id="linklink">links</span></li>
+            {% endif %}
+        </ul>
+
+    </header>
+
+    <!-- end differ -->
+
+    <footer id="footer" class="notheader" style="display:none;">
+        <div id="columns">
+            <div class="column col1">
+            <p>{{ config.mytheme_footer }}</p>
+                
+            </div>
+            <div class="column col2">
+                <img src="{{ theme_url }}/{{ config.mytheme_logourl }}" />
+                <p>To hire me, <br><span class="anchor contactshower">contact</span> for details!</p>
+            </div>
+        </div>
+
+        <div id="copyright">
+        <a href="">Attache Theme</a> for <a href="http://picocms.org/">Pico</a>. Copyright 2017 <a href="http://alanluo.com">Alan Luo</a>. All Rights Reserved.
+        </div>
+
+    <footer id="footer" class="notheader" style="display:none;">
+        <div id="columns">
+            <div class="column col1">
+            <p>{{ config.attache_footer }}</p>
+                
+            </div>
+            <div class="column col2">
+                <img src="{{ theme_url }}/{{ config.attache_logourl }}" />
+                <p>To hire me, <br><span class="anchor contactshower">contact</span> for details!</p>
+            </div>
+        </div>
+
+        <div id="copyright">
+        <a href="https://github.com/alan-luo/attache/">Attache theme</a> for <a href="http://picocms.org/">Pico</a>. Copyright 2017 <a href="http://alanluo.com">Alan Luo</a>. All Rights Reserved.
+        </div>
+    </footer>
+    </div>
+
+    <div id="sidebarContact" class="sidebar">
+        <i class="fa fa-times sidebarhider" aria-hidden="true"></i>
+        <h2>Contact</h2>
+        <ul>
+            {% for link in config.attache_contact %}
+            <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+            {% endfor %}
+        </ul>
+        <p>{{ config.attache_contactmessage }}</p>
+    </div>
+
+    {%if config.attache_showlinks %}
+    <div id="sidebarLinks" class="sidebar">
+        <i class="fa fa-times sidebarhider" aria-hidden="true"></i>
+        <h2>Links</h2>
+        <ul>
+            {% for link in config.attache_links %}
+            <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+            {% endfor %}
+        </ul>
+        
+        <p>{{ config.attache_linkmessage }}</p>
+    </div>
+    {% endif %}
+    <script>
+        var subtitles = [];
+        {% for subtitle in config.attache_subtitles %}
+            subtitles.push('{{ subtitle }}');
+        {% endfor %}
+    </script>
+    <script type="text/javascript" src="{{ theme_url }}/js/theme.js"></script>
+    
+    
+</body>
+</html>

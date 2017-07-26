@@ -1,0 +1,14 @@
+
+*.html
+
+lib/*
+
+plugins/*
+
+vendor/*
+
+index.php
+
+composer.json
+
+composer.lock
