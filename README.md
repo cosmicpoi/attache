@@ -14,6 +14,12 @@ This theme falls very much in the second category. On the front page, there's a 
 
 This theme only has two types of pages: the homepage and a project page. The homepage collects the project pages, which are each individually accessible.
 
+## Installation
+
+Put `attache` into your Pico `themes` folder and add `$config['theme'] = 'attache';` to your `config.php`.
+
+To install the dummy content, simply copy the example `content` and `assets` folders over to your Pico installation.
+
 ## Features
 
 **Dynamic Tag System**
@@ -95,7 +101,7 @@ Let's break down what each attribute does.
 - `Pointer`: this is an ***optional*** attribute. If specified, this is what will get rendered on the homepage rather than the full title. use for long titles.
 - `Description`: never shown, but used for `<meta>`.
 - `Date`: used for organization - the homepage displays projects by most recent first. By default, project pages only display the year, but this is easily changed. (See the [twig](https://twig.symfony.com/doc/2.x/filters/date.html) date spec for more.)
-- `Image`: this is the thumbnail that's shown on the front page
+- `Image`: this is the thumbnail that's shown on the front page. These images are stored in `assets/img/thumb`.
 - `Tags`: these are used for organization on the front page. Any tags which are not primary tags will automatically get added to the search box on the front page.
 - `Robots`: for `<meta>`
 - `Template`: specifies that the page should use `project.twig`. Only change if you want to make a certain page special.
